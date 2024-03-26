@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import LandingBanner from "./LandingBanner";
+
 
 export default function Home() {
+  
   return (
-    <div>Home</div>
-  )
+    <section className="">
+      <LandingBanner/>
+    </section>
+  );
 }
