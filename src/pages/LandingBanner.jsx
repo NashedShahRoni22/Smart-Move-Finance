@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Carousel, Typography } from "@material-tailwind/react";
 import sliderImage1 from "../assets/banner/loan_slider_image (1).jpg";
 import sliderImage2 from "../assets/banner/loan_slider_image (2).jpg";
