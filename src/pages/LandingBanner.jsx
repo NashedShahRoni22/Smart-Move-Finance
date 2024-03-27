@@ -8,24 +8,24 @@ export default function LandingBanner() {
   // sliders content
   const sliders = [
     {
-      Banner: sliderImage1,
-      Title: "Unlock Your Dream Home",
-      Description:
-        "Our home loan services cater to first-time buyers, seasoned homeowners, and property investors alike. With a variety of options including basic variable, fixed-rate, and standard variable loans, we ensure you find the perfect fit for your dream home.",
+      banner: sliderImage1,
+      title: "Unlock Your Dream Home",
+      description:
+        "Explore flexible loan options tailored to your needs, turning your dream of homeownership into reality.",
     },
 
     {
-      Banner: sliderImage2,
-      Title: "Maximize Your Business",
-      Description:
-        "Empower your business ventures with our tailored business loan solutions. Whether you're starting a new venture, expanding operations, or need capital for investments, our business loan options provide the financial support you need to thrive.",
+      banner: sliderImage2,
+      title: "Maximize Your Business",
+      description:
+        "Discover competitive rates and refinancing solutions to optimize your finances and save big on your mortgage.",
     },
 
     {
-      Banner: sliderImage3,
-      Title: "Invest Wisely, Grow Securely",
-      Description:
-        "Achieve your personal goals with our flexible personal loan services. From funding your education, managing unexpected expenses, to planning your dream vacation, we offer personalized loan solutions to suit your lifestyle and financial requirements.",
+      banner: sliderImage3,
+      title: "Invest Wisely, Grow Securely",
+      description:
+        "Explore investment property loans designed to help you build wealth and secure your financial future with confidence.",
     },
   ];
   return (
@@ -33,28 +33,28 @@ export default function LandingBanner() {
       {sliders.map((s, i) => (
         <div key={i} className="relative h-full w-full">
           <img
-            src={s.Banner}
+            src={s.banner}
             alt="Hero_Image"
-            className="h-full w-full object-cover "
+            className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 h-full w-full flex flex-col justify-center items-center  bg-black/75">
-            <div className="md:text-center w-3/4">
+          <div className="absolute inset-0 h-full w-full flex justify-center items-center  bg-black/80">
+            <div className="text-center w-3/4 lg:w-3/5">
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-2.5 md:mb-8 text-xl md:text-3xl lg:text-8xl"
+                className="mb-2.5 md:mb-8 lg:mb-12 text-3xl md:text-5xl lg:text-8xl"
               >
-                {s.Title}
+                {s.title}
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
-                className="mb-2.5 md:mb-8 opacity-80 text-sm md:text-xl"
+                className="mb-2.5 md:mb-8 lg:mb-12 text-sm md:text-xl lg:text-3xl"
               >
-                {s.Description}
+                {s.description}
               </Typography>
-              <button className="px-2 md:px-4 py-1 md:py-2 text-xs bg-white rounded shadow">
-                Explore
+              <button className="px-3 md:px-6 py-1.5 md:py-3 text-xs md:text-base bg-yellow-800 hover:bg-white text-indigo-900 font-semibold rounded-full shadow">
+                Explore Our Services
               </button>
             </div>
           </div>
