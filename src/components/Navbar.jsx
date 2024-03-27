@@ -23,10 +23,6 @@ export default function Navbar() {
       link: "/",
     },
     {
-      name: 'Blogs',
-      link: '/',
-    },
-    {
       name: 'Contact Us',
       link: '/contact_us',
     },
@@ -55,7 +51,7 @@ export default function Navbar() {
         )}
 
         <div className="flex gap-5">
-          <button className="px-2 md:px-4 py-1 md:py-2 text-xs md:text-base bg-yellow-800 hover:bg-white text-white hover:text-yellow-800 duration-300 ease-linear rounded-full">
+          <button className="px-2 md:px-4 py-1 md:py-2 text-xs md:text-base bg-secondary hover:bg-white text-primary font-semibold duration-300 ease-linear rounded-full">
             Get In Touch
           </button>
           <button onClick={() => setShowNav(!showNav)} className="lg:hidden">

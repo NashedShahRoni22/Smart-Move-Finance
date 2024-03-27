@@ -53,7 +53,7 @@ export default function LandingBanner() {
               >
                 {s.description}
               </Typography>
-              <button className="px-3 md:px-6 py-1.5 md:py-3 text-xs md:text-base bg-yellow-800 hover:bg-white text-indigo-900 font-semibold rounded-full shadow">
+              <button className="px-3 md:px-6 py-1.5 md:py-3 text-xs md:text-base bg-secondary hover:bg-white text-primary font-semibold rounded-full shadow">
                 Explore Our Services
               </button>
             </div>
