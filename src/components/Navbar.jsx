@@ -30,7 +30,7 @@ export default function Navbar() {
   ]
   return (
     <nav className='bg-primary text-white'>
-      <div className='container mx-auto p-2.5 md:py-5 flex justify-between items-center'>
+      <div className='mx-5 md:container md:mx-auto py-4 md:py-6 flex justify-between items-center'>
         <div>Logo</div>
         {/* tablet and desktop view */}
         <div className='hidden lg:flex gap-8'>
