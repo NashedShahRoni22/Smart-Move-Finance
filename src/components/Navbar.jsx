@@ -12,7 +12,7 @@ export default function Navbar() {
     },
     {
       name: 'Our Services',
-      link: '/',
+      link: '/service',
     },
     {
       name: 'About Us',
