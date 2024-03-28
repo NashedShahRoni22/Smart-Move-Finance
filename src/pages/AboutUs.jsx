@@ -1,6 +1,6 @@
 import React from "react";
 import yellowLine from "../assets/lines/yellow_line.png";
-
+import { RiDoubleQuotesR, RiDoubleQuotesL } from "react-icons/ri";
 export default function AboutUs() {
   return (
     <section className="mx-5 md:container md:mx-auto py-5 md:py-20">
@@ -10,15 +10,26 @@ export default function AboutUs() {
         </h1>
         <img src={yellowLine} alt="" className="" />
       </div>
-      <div className="mt-5 md:mt-10">
-        <div className="lg:w-1/2 flex flex-col gap-3 md:gap-6">
+      <div className="mt-5 md:mt-10 flex flex-col gap-5 md:flex-row md:gap-10">
+        <div className="md:w-1/3">
+          <img
+            src="https://i.ibb.co/HzFT8FT/Whats-App-Image-2024-03-28-at-23-27-40-cdaf51a4.jpg"
+            alt="Nawshad Ahmed"
+            className="rounded-3xl w-full h-[400px] md:h-[500px]"
+          />
+        </div>
+        <div className="md:w-2/3 flex flex-col gap-2.5 md:gap-5 justify-between">
+          <RiDoubleQuotesL className="text-3xl text-secondary" />
           <p className="text-justify">
             Nawshad Ahmed brings over 5 years of expertise in mortgage services
             to the forefront, embodying a commitment to excellence and
             personalized client care. With a deep-rooted passion for assisting
             individuals and families in realizing their homeownership dreams,
             Nawshad's approach combines empathy, integrity, and unparalleled
-            industry knowledge. As the founder of Smart Move Finance PTY Ltd,
+            industry knowledge. As the founder of{" "}
+            <span className="font-bold text-primary">
+              Smart Move Finance PTY Ltd,{" "}
+            </span>
             Nawshad's dedication to staying abreast of market dynamics ensures
             that clients receive tailored solutions that align seamlessly with
             their financial objectives. Through a network of trusted lenders and
@@ -26,7 +37,11 @@ export default function AboutUs() {
             mortgage experience, empowering clients to make informed decisions
             with confidence.
           </p>
-          <h5 className="text-xl md:text-3xl font-bold text-primary">Nawshad Ahmed</h5>
+          <h5 className="text-xl md:text-3xl font-bold text-secondary">
+            Nawshad Ahmed
+            <br />
+            <span className="text-base text-primary">Director</span>
+          </h5>
           <p className="text-justify">
             Nawshad's reputation as a trusted advisor is built upon a foundation
             of integrity, expertise, and unwavering commitment to client
@@ -39,6 +54,9 @@ export default function AboutUs() {
             well-being and strives to turn your homeownership dreams into
             reality.
           </p>
+          <div className="flex justify-end">
+            <RiDoubleQuotesR className="text-3xl text-secondary" />
+          </div>
         </div>
       </div>
     </section>

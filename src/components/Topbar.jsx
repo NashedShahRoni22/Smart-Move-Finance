@@ -12,7 +12,7 @@ export default function Topbar() {
           </Link>
           <Link className="flex items-center gap-1.5">
             {" "}
-            <MdLocalPhone className="text-xl" /> +61 4XX XXX XXX
+            <MdLocalPhone className="text-xl" /> +61 424 252 118
           </Link>
         </div>
         <p>Make your dream true</p>

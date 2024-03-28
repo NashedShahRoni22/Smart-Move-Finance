@@ -16,7 +16,7 @@ export default function Navbar() {
     },
     {
       name: 'About Us',
-      link: '/',
+      link: '/about_us',
     },
     {
       name: "Blogs & Articles",
