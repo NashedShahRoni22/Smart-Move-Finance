@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { HiMiniBars3BottomLeft } from 'react-icons/hi2'
+import { HiMiniBars3CenterLeft  } from 'react-icons/hi2'
 import { MdClose } from 'react-icons/md'
 import { useState } from 'react'
 
@@ -29,7 +29,7 @@ export default function Navbar() {
     },
   ]
   return (
-    <nav className='bg-primary text-white'>
+    <nav className='bg-primary text-white sticky top-0 z-50'>
       <div className='mx-5 md:container md:mx-auto py-4 md:py-6 flex justify-between items-center'>
         <div>Logo</div>
         {/* tablet and desktop view */}
@@ -44,7 +44,7 @@ export default function Navbar() {
         {showNav && (
           <div className='absolute left-0 top-0 py-5 min-w-full min-h-screen flex flex-col items-center justify-center bg-black/90 lg:hidden gap-8 z-50'>
             {menus.map((m, i) => (
-              <Link to={m.link} key={i} className='text-3xl'>
+              <Link to={m.link} key={i} className='text-3xl' onClick={()=> setShowNav(!showNav)}>
                 {m.name}
               </Link>
             ))}
@@ -60,7 +60,7 @@ export default function Navbar() {
               {showNav ? (
                 <MdClose className='text-3xl absolute top-5 right-5 z-50' />
               ) : (
-                <HiMiniBars3BottomLeft className='text-3xl' />
+                <HiMiniBars3CenterLeft  className='text-3xl' />
               )}
             </button>
           </div>
