@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <nav className='bg-primary text-white sticky top-0 z-50'>
       <div className='mx-5 md:container md:mx-auto py-4 md:py-6 flex justify-between items-center'>
-        <div>Logo</div>
+        <p className='font-bold text-secondary'>SMFP</p>
         {/* tablet and desktop view */}
         <div className='hidden lg:flex gap-8'>
           {menus.map((m, i) => (
