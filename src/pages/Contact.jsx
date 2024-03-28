@@ -1,14 +1,14 @@
 import { Input } from "@material-tailwind/react";
 import { Textarea } from "@material-tailwind/react";
-import { MdEmail, MdLocationCity, MdPhone } from "react-icons/md";
+import yellowLine from "../assets/lines/yellow_line.png";
 
 export default function Contact() {
   return (
-    <section className="mx-5 md:container md:mx-auto py-10 md:py-20">
+    <section className="mx-5 md:container md:mx-auto py-10 md:py-20 min-h-[80vh] flex justify-center items-center">
       {/* <h1 className="text-primary  text-xl md:text-3xl font-semibold">
         Contact us
       </h1> */}
-      <div className="lg:flex gap-16">
+      <div className="lg:flex gap-16 flex-1">
         <div className="lg:w-1/2">
           {/* <div className="flex justify-between">
             <p>Address</p>
@@ -34,6 +34,7 @@ export default function Contact() {
             <p className="text-primary  text-xl md:text-3xl font-semibold">
               Leave a message
             </p>
+            <img src={yellowLine} alt="" />
             <form action="" className="mt-5">
               <div className="my-4">
                 <Input

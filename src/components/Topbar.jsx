@@ -8,7 +8,7 @@ export default function Topbar() {
         <div className="flex gap-8 lg:gap-16">
           <Link className="flex items-center gap-1.5">
             {" "}
-            <MdEmail className="text-xl" /> smartmovefinance@web.com
+            <MdEmail className="text-xl" /> Info@smartmovefinance.com.au
           </Link>
           <Link className="flex items-center gap-1.5">
             {" "}
