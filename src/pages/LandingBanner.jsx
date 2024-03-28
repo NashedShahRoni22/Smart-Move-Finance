@@ -32,12 +32,12 @@ export default function LandingBanner() {
     <Carousel className="lg:h-[80vh]" navigation={false}>
       {sliders.map((s, i) => (
         <div key={i} className="relative h-full w-full">
-          <img
+          {/* <img
             src={s.banner}
             alt="Hero_Image"
             className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 h-full w-full flex justify-center items-center  bg-black/80">
+          /> */}
+          <div className={`absolute inset-0 h-full w-full flex justify-center items-center  bg-gradient-to-r ${ i % 2 !== 0 ? "from-primary via-[#34327D] to-primary" : "from-blue-900 via-blue-400 to-blue-900" }`}>
             <div className="text-center w-3/4 lg:w-3/5">
               <Typography
                 variant="h1"
