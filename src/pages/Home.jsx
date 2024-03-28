@@ -1,4 +1,5 @@
 import AboutUs from './AboutUs'
+import Contact from './Contact'
 import LandingBanner from './LandingBanner'
 import Services from './Services'
 import Testimonial from './Testimonial'
@@ -12,6 +13,7 @@ export default function Home() {
       <AboutUs />
       <Testimonial />
       <WhatWeDo />
+     <Contact/>
     </section>
   )
 }

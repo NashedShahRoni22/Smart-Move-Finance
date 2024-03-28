@@ -38,6 +38,62 @@ const Services = () => {
       description:
         'Do not have 20% down payment for your dream home? Do not worry Tmb is here to help you.',
     },
+    {
+      id: 6,
+      img: 'https://i.ibb.co/RQD1N4s/foreign.png',
+      name: 'Foreign Loan',
+      description:
+        'Do not have 20% down payment for your dream home? Do not worry Tmb is here to help you.',
+    },
+    {
+      id: 7,
+      img: 'https://i.ibb.co/PrgC3SF/fixed.png',
+      name: 'Fixed Rate Loan',
+      description:
+        'Do not have 20% down payment for your dream home? Do not worry Tmb is here to help you.',
+    },
+    {
+      id: 8,
+      img: 'https://i.ibb.co/3zjdNm7/private.png',
+      name: 'Private Equity Loan',
+      description:
+        'Do not have 20% down payment for your dream home? Do not worry Tmb is here to help you.',
+    },
+    {
+      id: 9,
+      img: 'https://i.ibb.co/cD26C3x/icons8-general-ledger-50.png',
+      name: 'General Insurances Loan',
+      description:
+        'Do not have 20% down payment for your dream home? Do not worry Tmb is here to help you.',
+    },
+    {
+      id: 10,
+      img: 'https://i.ibb.co/KWx21rm/self.png',
+      name: 'Self Managed Loan',
+      description:
+        'Do not have 20% down payment for your dream home? Do not worry Tmb is here to help you.',
+    },
+    {
+      id: 11,
+      img: 'https://i.ibb.co/6NGbMsR/credit.png',
+      name: 'Line of Credit Loan',
+      description:
+        'Do not have 20% down payment for your dream home? Do not worry Tmb is here to help you.',
+    },
+    {
+      id: 12,
+      img: 'https://i.ibb.co/LvmQ4B1/construction.png',
+      name: 'Construction Loan',
+      description:
+        'Do not have 20% down payment for your dream home? Do not worry Tmb is here to help you.',
+    },
+    {
+      id: 13,
+      img: 'https://i.ibb.co/w0JjMGr/basic.png',
+      name: 'Basic Variable Loan',
+      description:
+        'Do not have 20% down payment for your dream home? Do not worry Tmb is here to help you.',
+    },
   ]
 
   return (
@@ -55,7 +111,7 @@ const Services = () => {
               <div>
                 <img src={loan.img} alt='' className='size-12 md:size-18' />
               </div>
-              <p className='text-xl md:text-3xl font-bold'>{loan.name}</p>
+              <p className='text-xl md:text-2xl font-bold'>{loan.name}</p>
               <p className='md:text-xl text-center'>{loan.description}</p>
             </div>
           </Link>
