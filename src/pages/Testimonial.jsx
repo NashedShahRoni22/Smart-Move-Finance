@@ -49,7 +49,7 @@ const Testimonial = () => {
   return (
     <section className="mx-5 md:container md:mx-auto py-5 md:py-20">
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-primary text-3xl md:text-6xl font-semibold">
+        <h1 className="text-primary text-3xl lg:text-6xl font-semibold">
           Client Reviews
         </h1>
         <img src={yellowLine} alt="" className="" />

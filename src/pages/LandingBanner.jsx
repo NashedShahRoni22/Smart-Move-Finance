@@ -26,7 +26,7 @@ export default function LandingBanner() {
       {sliders.map((s, i) => (
         <div
           key={i}
-          className={`flex justify-center items-center  bg-gradient-to-r min-h-[60vh] lg:min-h-[80vh] ${
+          className={`flex justify-center items-center  bg-gradient-to-r min-h-[50vh] lg:min-h-[80vh] ${
             i % 2 !== 0
               ? "from-primary via-[#34327D] to-primary"
               : "from-blue-900 via-blue-400 to-blue-900"

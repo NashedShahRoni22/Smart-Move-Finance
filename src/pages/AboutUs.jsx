@@ -7,20 +7,20 @@ export default function AboutUs() {
     <>
       <section className="mx-5 md:container md:mx-auto py-5 md:py-20">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-primary text-3xl md:text-6xl font-semibold">
+          <h1 className="text-primary text-3xl lg:text-6xl font-semibold">
             About Us
           </h1>
           <img src={yellowLine} alt="" className="" />
         </div>
         <div className="mt-5 md:mt-10 flex flex-col gap-5 md:flex-row-reverse md:gap-10">
-          <div className="md:w-1/3">
+          <div className="md:w-1/2 lg:w-1/3">
             <img
               src="https://i.ibb.co/HzFT8FT/Whats-App-Image-2024-03-28-at-23-27-40-cdaf51a4.jpg"
               alt="Nawshad Ahmed"
               className="rounded-3xl w-full h-[400px] md:h-[500px]"
             />
           </div>
-          <div className="md:w-2/3 flex flex-col gap-2.5 md:gap-5 justify-between">
+          <div className="md:w-1/2 lg:w-2/3 flex flex-col gap-2.5 md:gap-5 justify-between">
             <RiDoubleQuotesL className="text-3xl text-secondary" />
             <p className="text-justify">
               Nawshad Ahmed brings over 5 years of expertise in mortgage
