@@ -1,7 +1,6 @@
 import React from "react";
 import yellowLine from "../assets/lines/yellow_line.png";
 import { RiDoubleQuotesR, RiDoubleQuotesL } from "react-icons/ri";
-import WhatWeDo from "./WhatWeDo";
 export default function AboutUs() {
   return (
     <>
