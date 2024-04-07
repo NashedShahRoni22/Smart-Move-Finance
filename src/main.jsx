@@ -10,6 +10,8 @@ import AboutUs from "./pages/AboutUs.jsx";
 import Services from "./pages/Services.jsx";
 import Admin from "./layouts/Admin.jsx";
 import AdminAddService from "./pages/AdminAddService.jsx";
+import GetService from "./pages/GetService.jsx";
+import UpdateService from "./pages/UpdateService.jsx";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
       {
         path: "/admin",
         element: <AdminAddService />,
+      },
+      {
+        path: "/admin/all_services",
+        element: <GetService />,
+      },
+      {
+        path: "/admin/update_service/:slug/:id",
+        element: <UpdateService />,
       },
     ],
   },
