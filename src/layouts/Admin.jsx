@@ -8,7 +8,7 @@ export default function Admin() {
   const [show, setShow] = useState(false);
   return (
     <section>
-      <div className="flex justify-between md:hidden p-5 bg-primary text-white">
+      <div className="flex justify-between lg:hidden p-5 bg-primary text-white">
         <Link to="/">Home</Link>
         <button onClick={() => setShow(!show)}>
           {show ? (
@@ -19,11 +19,11 @@ export default function Admin() {
         </button>
       </div>
       {show && <LeftBar />}
-      <div className="flex mx-5 md:mx-0">
-        <div className="hidden md:block md:w-1/3 lg:w-1/6">
+      <div className="lg:flex mx-5 md:mx-0">
+        <div className="hidden lg:block lg:w-1/6">
           <LeftBar />
         </div>
-        <div className="md:w-2/3 lg:w-5/6">
+        <div className="lg:w-5/6">
           <Outlet />
         </div>
       </div>

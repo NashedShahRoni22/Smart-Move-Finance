@@ -71,7 +71,7 @@ const Testimonial = () => {
               />
               <div>
                 {" "}
-                <p className="text-primary font-bold">{testimonial.name}</p>
+                <p className="text-secondary font-bold md:text-xl">{testimonial.name}</p>
                 <p className="text-primary">{testimonial.designation}</p>
               </div>
             </div>
