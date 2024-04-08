@@ -10,6 +10,7 @@ export default function AdminAddService() {
   const [value, setValue] = useState("");
   const [icon, setIcon] = useState("");
   const [thumbnail, setThumbnail] = useState("");
+  // add a new service
   const addService = async (e) => {
     setLoader(true);
     e.preventDefault();
@@ -90,18 +91,6 @@ export default function AdminAddService() {
         <label className="">Enter Content</label>
         <ReactQuill theme="snow" value={value} onChange={setValue} />
       </div>
-      {/* <div className="mt-5 flex flex-col gap-2.5">
-        <label className="">Preview Content</label>
-        <div
-          className="preview-container"
-          style={{
-            border: "1px solid #ccc",
-            padding: "10px",
-            minHeight: "100px",
-          }}
-          dangerouslySetInnerHTML={{ __html: value }}
-        />
-      </div> */}
       <Button type="submit" className="bg-primary mt-2.5 flex gap-2 items-center">
         Submit
         {

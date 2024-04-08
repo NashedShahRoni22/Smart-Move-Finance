@@ -1,0 +1,10 @@
+import { Spinner } from '@material-tailwind/react'
+import React from 'react'
+
+export default function LoaderPage() {
+  return (
+    <div className='min-h-[60vh] flex justify-center items-center'>
+        <Spinner className='h-8 w-8' />
+    </div>
+  )
+}
