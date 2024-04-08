@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import LeftBar from "../components/LeftBar";
 import { FaBars } from "react-icons/fa6";
