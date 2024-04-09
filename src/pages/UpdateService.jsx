@@ -1,7 +1,9 @@
+import  { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Button, Spinner } from "@material-tailwind/react";
-import React, { useEffect, useState } from "react";
+
 import ReactQuill from "react-quill";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import LoaderPage from "../components/LoaderPage";
 
 export default function UpdateService() {

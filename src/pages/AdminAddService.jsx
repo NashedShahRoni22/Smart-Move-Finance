@@ -1,5 +1,5 @@
 import { Button, Spinner } from "@material-tailwind/react";
-import React, { useState } from "react";
+import  { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useNavigate } from "react-router-dom";
@@ -51,8 +51,8 @@ export default function AdminAddService() {
       <h5 className="text-xl md:text-3xl text-primary font-semibold">
         Add Service
       </h5>
-      <div className="grid md:grid-cols-2 gap-2.5 md:gap-5 mt-5 md:mt-10">
-        <div className="flex flex-col gap-2.5">
+      <div className='grid md:grid-cols-2 gap-2.5 md:gap-5 mt-5 md:mt-10'>
+        <div className='flex flex-col gap-2.5'>
           <label>Select Icon</label>
           <input
             type="file"
@@ -60,7 +60,7 @@ export default function AdminAddService() {
             onChange={(e) => setIcon(e.target.files[0])}
           />
         </div>
-        <div className="flex flex-col gap-2.5">
+        <div className='flex flex-col gap-2.5'>
           <label>Select Thumbnail</label>
           <input
             type="file"
@@ -68,7 +68,7 @@ export default function AdminAddService() {
             onChange={(e) => setThumbnail(e.target.files[0])}
           />
         </div>
-        <div className="flex flex-col gap-2.5">
+        <div className='flex flex-col gap-2.5'>
           <label>Enter Title</label>
           <input
             type="text"
@@ -77,7 +77,7 @@ export default function AdminAddService() {
             placeholder="Enter Title"
           />
         </div>
-        <div className="flex flex-col gap-2.5">
+        <div className='flex flex-col gap-2.5'>
           <label>Enter Slogan</label>
           <input
             type="text"
