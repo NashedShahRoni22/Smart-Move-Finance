@@ -13,12 +13,14 @@ export default function UpdateService() {
   const navigate = useNavigate();
   const [loader, setLoader] = useState(false);
   const [updateLoader, setUpdateLoader] = useState(false);
-  const [value, setValue] = useState();
+  //manage data
+  const [value, setValue] = useState("");
   const [icon, setIcon] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [title, setTitle] = useState("");
   const [slogan, setSlogan] = useState("");
 
+  // console.log("Default Body",icon, title, thumbnail, slogan, value);
   //get service
   useEffect(() => {
     setLoader(true);
@@ -27,9 +29,11 @@ export default function UpdateService() {
       .then((data) => {
         if (data.status === true) {
           setService(data.data);
+          setValue(data.data.content);
+          setIcon(data.data.icon);
+          setThumbnail(data.data.thumbnail);
           setTitle(data.data.title);
           setSlogan(data.data.slogan);
-          setValue(data.data.content);
           setLoader(false);
         }
       });
@@ -39,7 +43,7 @@ export default function UpdateService() {
   const updateService = async (id) => {
     setUpdateLoader(true);
 
-    // console.log(icon, title, thumbnail, slogan, value);
+    // console.log("Inside Function",icon, title, thumbnail, slogan, value);
 
     const formData = new FormData();
     formData.append("icon", icon);
@@ -63,7 +67,7 @@ export default function UpdateService() {
       if (data.status === true) {
         window.alert(data.msg);
         setUpdateLoader(false);
-        navigate("/admin/all_services");
+        navigate("/admin/manage_service");
       }
       // Handle response data as needed
     } catch (error) {

@@ -18,7 +18,7 @@ export default function Admin() {
           )}
         </button>
       </div>
-      {show && <LeftBar />}
+      {show && <LeftBar setShow={setShow} />}
       <div className='lg:flex mx-5 md:mx-0'>
         <div className='hidden lg:block lg:w-1/6 '>
           <LeftBar />

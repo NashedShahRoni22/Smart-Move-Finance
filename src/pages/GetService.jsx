@@ -52,7 +52,7 @@ export default function GetService() {
             {services?.map((s, i) => (
               <div
                 key={i}
-                className="text-primary hover:shadow hover:shadow-primary  flex  flex-col gap-5  justify-between items-center p-10 rounded-3xl duration-300 ease-linear"
+                className="text-primary shadow hover:shadow-primary  flex  flex-col gap-5  justify-between items-center p-10 rounded-3xl duration-300 ease-linear"
               >
                 <div>
                   <img src={s?.icon} alt="" className="size-12 md:size-18" />
