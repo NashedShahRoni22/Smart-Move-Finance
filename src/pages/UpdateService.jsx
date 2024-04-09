@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 import  { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-=======
 import { Button, Spinner } from "@material-tailwind/react";
-import React, { useEffect, useState } from "react";
+
 import ReactQuill from "react-quill";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import LoaderPage from "../components/LoaderPage";
->>>>>>> 97e2516e4816ba6429c8cfb9cec863bcf1383080
 
 export default function UpdateService() {
   const { id, slug } = useParams();

@@ -1,67 +1,72 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Main from "./layouts/Main.jsx";
-import Home from "./pages/Home.jsx";
-import Contact from "./pages/Contact.jsx";
-import Testimonial from "./pages/Testimonial.jsx";
-import AboutUs from "./pages/AboutUs.jsx";
-import Services from "./pages/Services.jsx";
-import Admin from "./layouts/Admin.jsx";
-import AdminAddService from "./pages/AdminAddService.jsx";
-import GetService from "./pages/GetService.jsx";
-import UpdateService from "./pages/UpdateService.jsx";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import Main from './layouts/Main.jsx'
+import Home from './pages/Home.jsx'
+import Contact from './pages/Contact.jsx'
+import Testimonial from './pages/Testimonial.jsx'
+import AboutUs from './pages/AboutUs.jsx'
+import Services from './pages/Services.jsx'
+import Admin from './layouts/Admin.jsx'
+import AdminAddService from './pages/AdminAddService.jsx'
+import GetService from './pages/GetService.jsx'
+import UpdateService from './pages/UpdateService.jsx'
+import Appointment from './pages/Appointment.jsx'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Main />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home />,
       },
       {
-        path: "/contact_us",
+        path: '/contact_us',
         element: <Contact />,
       },
       {
-        path: "/testimonial",
+        path: '/testimonial',
         element: <Testimonial />,
       },
       {
-        path: "/about_us",
+        path: '/about_us',
         element: <AboutUs />,
       },
       {
-        path: "/service",
+        path: '/service',
         element: <Services />,
       },
     ],
   },
   {
-    path: "/admin",
+    path: '/admin',
     element: <Admin />,
     children: [
       {
-        path: "/admin",
+        path: '/admin',
         element: <AdminAddService />,
       },
       {
-        path: "/admin/all_services",
+        path: '/admin/all_services',
         element: <GetService />,
       },
       {
-        path: "/admin/update_service/:slug/:id",
+        path: '/admin/update_service/:slug/:id',
         element: <UpdateService />,
+      },
+      {
+        path: '/admin/appointment',
+        element: <Appointment />,
       },
     ],
   },
-]);
+])
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
-);
+)

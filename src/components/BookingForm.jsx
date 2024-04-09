@@ -4,6 +4,7 @@ import { useState } from 'react'
 export default function BookingForm({ handleOpen }) {
   const [loader, setLoader] = useState(false)
   const [firstName, setFirstname] = useState('')
+  const [loanType, setLoanType] = useState('')
   const [lastName, setLastname] = useState('')
   const [phoneNumber, setphoneNumber] = useState('')
   const [email, setEmail] = useState('')
@@ -14,34 +15,47 @@ export default function BookingForm({ handleOpen }) {
     setLoader(true)
     e.preventDefault()
 
-    console.log(firstName, lastName, phoneNumber, email, address, message)
+    console.log(
+      firstName,
+      loanType,
+      lastName,
+      phoneNumber,
+      email,
+      address,
+      message
+    )
 
-    // const formData = new FormData()
+    const formData = new FormData()
 
-    // formData.append('firstName', firstName)
-    // formData.append('lastName', lastName)
-    // formData.append('phoneNumber', phoneNumber)
-    // formData.append('email', email)
-    // formData.append('address', address)
-    // formData.append('message', message)
-    // try {
-    //   const response = await fetch('', {
-    //     method: 'POST',
-    //     body: formData,
-    //     headers: {
-    //       // Add any necessary headers, such as authorization
-    //     },
-    //   })
-    //   const data = await response.json()
-    //   if (data.status === true) {
-    //     window.alert(data.msg)
-    //     setLoader(false)
-    //     handleOpen
-    //   }
-    // } catch (error) {
-    //   console.log('Error:', error)
-    //   setLoader(false)
-    // }
+    formData.append('service_id', loanType)
+    formData.append('first_name', firstName)
+    formData.append('last_name', lastName)
+    formData.append('phone', phoneNumber)
+    formData.append('email', email)
+    formData.append('location', address)
+    formData.append('message', message)
+    try {
+      const response = await fetch(
+        'https://api.nsrdev.com/api/appointment/store',
+        {
+          method: 'POST',
+          body: formData,
+          headers: {
+            // Add any necessary headers, such as authorization
+          },
+        }
+      )
+      const data = await response.json()
+      if (data.status === true) {
+        window.alert(data.msg)
+        handleOpen()
+        console.log(data)
+        setLoader(false)
+      }
+    } catch (error) {
+      console.log('Error:', error)
+      setLoader(false)
+    }
   }
 
   return (
@@ -49,6 +63,11 @@ export default function BookingForm({ handleOpen }) {
       <h5 className='text-xl lg:text-3xl text-primary font-semibold'>
         Book Appointment
       </h5>
+      <Input
+        label='Loan Type'
+        required
+        onChange={(e) => setLoanType(e.target.value)}
+      />
       <div className='grid md:grid-cols-2 gap-2.5 md:gap-5'>
         <Input
           label='First Name'
@@ -100,7 +119,7 @@ export default function BookingForm({ handleOpen }) {
             (message === '')
           }
         >
-          {loader ? <span>Loading...</span> : <span>Confirm</span>}
+          {loader ? <span>Loading...</span> : <span>Add Appointment</span>}
         </button>
       </div>
     </form>
