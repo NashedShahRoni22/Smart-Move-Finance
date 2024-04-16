@@ -13,6 +13,7 @@ import AdminAddService from "./pages/AdminAddService.jsx";
 import GetService from "./pages/GetService.jsx";
 import UpdateService from "./pages/UpdateService.jsx";
 import Appointment from "./pages/Appointment.jsx";
+import ServiceDetails from "./components/ServiceDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/service",
         element: <Services />,
+      },
+      {
+        path: "/service_details/:slug/:id",
+        element: <ServiceDetails />,
       },
     ],
   },

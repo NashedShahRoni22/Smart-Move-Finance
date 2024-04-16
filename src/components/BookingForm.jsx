@@ -1,5 +1,11 @@
-import { Button, Input, Textarea } from "@material-tailwind/react";
-import { useState } from "react";
+import {
+  Button,
+  Input,
+  Option,
+  Select,
+  Textarea,
+} from "@material-tailwind/react";
+import { useEffect, useState } from "react";
 
 export default function BookingForm({ handleOpen }) {
   const [loader, setLoader] = useState(false);
@@ -11,6 +17,21 @@ export default function BookingForm({ handleOpen }) {
   const [address, setAddress] = useState("");
   const [message, setMessage] = useState("");
 
+  const [services, setServices] = useState([]);
+  // console.log(services);
+
+  //get services
+  useEffect(() => {
+    fetch("https://smartmovefinancial.com.au/api/services")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === true) {
+          setServices(data.data);
+        }
+      });
+  }, []);
+
+  //post appointment
   const addAppointment = async (e) => {
     setLoader(true);
     e.preventDefault();
@@ -36,7 +57,7 @@ export default function BookingForm({ handleOpen }) {
     formData.append("message", message);
     try {
       const response = await fetch(
-        "https://api.nsrdev.com/api/appointment/store",
+        "https://smartmovefinancial.com.au/api/appointment/store",
         {
           method: "POST",
           body: formData,
@@ -64,11 +85,18 @@ export default function BookingForm({ handleOpen }) {
         Book Appointment
       </h5>
       <div className="mt-5 md:mt-10">
-        <Input
+        {/* <Input
           label="Loan Type"
           required
           onChange={(e) => setLoanType(e.target.value)}
-        />
+        /> */}
+        <Select onChange={value => setLoanType(value)} label="Select Service">
+          {services?.map((s,i) => (
+            <Option key={i} value={s?.id}>
+              {s?.title}
+            </Option>
+          ))}
+        </Select>
       </div>
       <div className="grid md:grid-cols-2 gap-2.5 md:gap-5 mt-2.5 md:mt-5">
         <Input
@@ -103,13 +131,13 @@ export default function BookingForm({ handleOpen }) {
       <div className="mt-5 md:mt-10">
         <button
           onClick={handleOpen}
-          className="px-4 py-1.5 bg-red-500 text-white rounded shadow"
+          className="px-4 py-1.5 bg-secondary text-white rounded-full shadow"
         >
           <span>Cancel</span>
         </button>
         <button
           onClick={addAppointment}
-          className="ml-2.5 px-4 py-1.5 bg-primary text-white rounded shadow"
+          className="ml-2.5 px-4 py-1.5 bg-primary text-white rounded-full shadow"
           disabled={
             (firstName === "") |
             (lastName === "") |

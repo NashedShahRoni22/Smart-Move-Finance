@@ -20,18 +20,17 @@ export default function UpdateService() {
   const [title, setTitle] = useState("");
   const [slogan, setSlogan] = useState("");
 
-  // console.log("Default Body",icon, title, thumbnail, slogan, value);
   //get service
   useEffect(() => {
     setLoader(true);
-    fetch(`https://api.nsrdev.com/api/service-details/${slug}/${id}`)
+    fetch(`https://smartmovefinancial.com.au/api/service-details/${slug}/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === true) {
           setService(data.data);
           setValue(data.data.content);
-          setIcon(data.data.icon);
-          setThumbnail(data.data.thumbnail);
+          // setIcon(data.data.icon);
+          // setThumbnail(data.data.thumbnail);
           setTitle(data.data.title);
           setSlogan(data.data.slogan);
           setLoader(false);
@@ -54,7 +53,7 @@ export default function UpdateService() {
 
     try {
       const response = await fetch(
-        `https://api.nsrdev.com/api/service/update/${id}`,
+        `https://smartmovefinancial.com.au/api/service/update/${id}`,
         {
           method: "POST",
           body: formData,
@@ -82,7 +81,7 @@ export default function UpdateService() {
       ) : (
         <>
           <label className="font-semibold">Update thumbnail</label>
-          <img src={service?.thumbnail} alt="" className="w-full h-64" />
+          <img src={service?.thumbnail} alt="" className="w-full h-[60vh]" />
           <input
             type="file"
             className=""
@@ -109,7 +108,6 @@ export default function UpdateService() {
             onChange={(e) => setSlogan(e.target.value)}
             type="text"
           />
-          {/* <div dangerouslySetInnerHTML={{ __html: service?.content }} /> */}
           <ReactQuill theme="snow" value={value} onChange={setValue} />
           <Button
             onClick={() => updateService(service?.id)}

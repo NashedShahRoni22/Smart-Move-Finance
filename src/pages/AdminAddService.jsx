@@ -27,7 +27,7 @@ export default function AdminAddService() {
     formData.append("content", value);
 
     try {
-      const response = await fetch("https://api.nsrdev.com/api/service/store", {
+      const response = await fetch("https://smartmovefinancial.com.au/api/service/store", {
         method: "POST",
         body: formData,
         headers: {
@@ -38,7 +38,7 @@ export default function AdminAddService() {
       if(data.status === true){
         window.alert(data.msg);
         setLoader(false);
-        navigate("/admin/all_services")
+        navigate("/admin/manage_service")
       }
       // Handle response data as needed
     } catch (error) {
