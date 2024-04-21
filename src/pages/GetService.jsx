@@ -10,7 +10,7 @@ export default function GetService() {
   //get services
   useEffect(() => {
     setLoading(true);
-    fetch("https://smartmovefinancial.com.au/api/services")
+    fetch("https://api.smartmovefinancial.com.au/api/services")
       .then((res) => res.json())
       .then((data) => {
         if (data.status === true) {
@@ -23,7 +23,7 @@ export default function GetService() {
   const deleteService = async (id) => {
     try {
       const response = await fetch(
-        `https://smartmovefinancial.com.au/api/service/delete/${id}`,
+        `https://api.smartmovefinancial.com.au/api/service/delete/${id}`,
         {
           method: "GET",
         }

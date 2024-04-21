@@ -23,7 +23,7 @@ export default function UpdateService() {
   //get service
   useEffect(() => {
     setLoader(true);
-    fetch(`https://smartmovefinancial.com.au/api/service-details/${slug}/${id}`)
+    fetch(`https://api.smartmovefinancial.com.au/api/service-details/${slug}/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === true) {
@@ -53,7 +53,7 @@ export default function UpdateService() {
 
     try {
       const response = await fetch(
-        `https://smartmovefinancial.com.au/api/service/update/${id}`,
+        `https://api.smartmovefinancial.com.au/api/service/update/${id}`,
         {
           method: "POST",
           body: formData,
@@ -81,7 +81,7 @@ export default function UpdateService() {
       ) : (
         <>
           <label className="font-semibold">Update thumbnail</label>
-          <img src={service?.thumbnail} alt="" className="w-full h-[60vh]" />
+          <img src={service?.thumbnail} alt="" className="size-64" />
           <input
             type="file"
             className=""

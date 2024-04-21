@@ -22,7 +22,7 @@ export default function BookingForm({ handleOpen }) {
 
   //get services
   useEffect(() => {
-    fetch("https://smartmovefinancial.com.au/api/services")
+    fetch("https://api.smartmovefinancial.com.au/api/services")
       .then((res) => res.json())
       .then((data) => {
         if (data.status === true) {
@@ -57,7 +57,7 @@ export default function BookingForm({ handleOpen }) {
     formData.append("message", message);
     try {
       const response = await fetch(
-        "https://smartmovefinancial.com.au/api/appointment/store",
+        "https://api.smartmovefinancial.com.au/api/appointment/store",
         {
           method: "POST",
           body: formData,

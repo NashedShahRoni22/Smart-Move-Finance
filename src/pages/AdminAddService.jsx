@@ -25,9 +25,8 @@ export default function AdminAddService() {
     formData.append("thumbnail", thumbnail);
     formData.append("slogan", slogan);
     formData.append("content", value);
-
     try {
-      const response = await fetch("https://smartmovefinancial.com.au/api/service/store", {
+      const response = await fetch("https://api.smartmovefinancial.com.au/api/service/store", {
         method: "POST",
         body: formData,
         headers: {

@@ -24,7 +24,7 @@ const Appointment = () => {
   };
   //get appointment..
   useEffect(() => {
-    fetch("https://smartmovefinancial.com.au/api/appointments")
+    fetch("https://api.smartmovefinancial.com.au/api/appointments")
       .then((res) => res.json())
       .then((data) => {
         setAppointments(data.data);
@@ -39,7 +39,7 @@ const Appointment = () => {
     );
     if (aggre) {
       fetch(
-        `https://smartmovefinancial.com.au/api/appointment/delete/${oneAppointment.id}`
+        `https://api.smartmovefinancial.com.au/api/appointment/delete/${oneAppointment.id}`
       )
         .then((res) => res.json())
         .then((data) => {
