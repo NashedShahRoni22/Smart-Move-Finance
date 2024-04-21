@@ -13,7 +13,7 @@ const Appointment = () => {
   const [open, setOpen] = useState(false);
   const [loader, setLoader] = useState(true);
   const [appointments, setAppointments] = useState([]);
-  // console.log(appointments);
+  console.log(appointments);
   const [singleAppointment, setSingleAppointment] = useState({});
 
   const TABLE_HEAD = ["Loan type", "Name", "Phone number", "Email", "View"];
@@ -35,7 +35,7 @@ const Appointment = () => {
   //Delete Appointment
   const handaleDeleteAppointment = (oneAppointment) => {
     const aggre = window.confirm(
-      `You want to delete, ${oneAppointment.first_name}. appointment ?`
+      `You want to delete, ${oneAppointment.first_name}. appointment for ${oneAppointment.service_title} ?`
     );
     if (aggre) {
       fetch(
@@ -184,7 +184,7 @@ const Appointment = () => {
         
         <Dialog open={open} handler={handleOpen} size="lg">
           <DialogHeader className="text-primary">
-            Loan type : {singleAppointment?.service_id}
+            Loan type : {singleAppointment?.service_title}
           </DialogHeader>
 
           <DialogBody className="">
