@@ -1,4 +1,5 @@
 import { Carousel, Typography } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 export default function LandingBanner() {
   // sliders content
@@ -47,9 +48,9 @@ export default function LandingBanner() {
             >
               {s.description}
             </Typography>
-            <button className={`px-4 md:px-6 py-2 md:py-4 text-xs md:text-base ${i % 2 !== 0 ? "bg-secondary text-primary" : "bg-primary text-white hover:text-primary"} hover:bg-white font-semibold rounded-full shadow`}>
+            <Link to={'/service'} className={`px-4 md:px-6 py-2 md:py-4 text-xs md:text-base ${i % 2 !== 0 ? "bg-secondary text-primary" : "bg-primary text-white hover:text-primary"} hover:bg-white font-semibold rounded-full shadow`}>
               Explore Our Services
-            </button>
+            </Link>
           </div>
         </div>
       ))}

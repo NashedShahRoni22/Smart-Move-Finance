@@ -10,20 +10,16 @@ import { Link } from "react-router-dom";
 export default function Bottombar() {
   const menus = [
     {
-      name: "Home Page",
+      name: "Home",
       link: "/",
     },
     {
       name: "Our Services",
-      link: "/",
+      link: "/service",
     },
     {
       name: "About Us",
-      link: "/",
-    },
-    {
-      name: "Blogs & Articles",
-      link: "/",
+      link: "/about_us",
     },
     {
       name: "Contact Us",

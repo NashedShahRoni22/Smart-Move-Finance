@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
-import {
-  Dialog,
-} from "@material-tailwind/react";
+import { Dialog } from "@material-tailwind/react";
 import BookingForm from "./BookingForm";
-import logo from "../assets/smfp_logo.jpg"
+import logo from "../assets/smfp_logo.jpg";
 
 export default function Navbar() {
   const [showNav, setShowNav] = useState(false);
@@ -23,10 +21,6 @@ export default function Navbar() {
       name: "About Us",
       link: "/about_us",
     },
-    // {
-    //   name: 'Blogs & Articles',
-    //   link: '/',
-    // },
     {
       name: "Contact Us",
       link: "/contact_us",
@@ -39,8 +33,9 @@ export default function Navbar() {
   return (
     <nav className="bg-primary text-white sticky top-0 z-50">
       <div className="mx-5 md:container md:mx-auto py-4 md:py-6 flex justify-between items-center">
-        {/* <p className="font-bold text-secondary">SMFP</p> */}
-        <img src={logo} alt="" className="w-[100px] md:w-[150px]" />
+        <Link to={"/"}>
+          <img src={logo} alt="" className="w-[100px] md:w-[150px]" />
+        </Link>
         {/* tablet and desktop view */}
         <div className="hidden lg:flex gap-8">
           {menus.map((m, i) => (
@@ -84,7 +79,7 @@ export default function Navbar() {
         </div>
       </div>
       <Dialog open={open} handler={handleOpen}>
-        <BookingForm handleOpen={handleOpen}/>
+        <BookingForm handleOpen={handleOpen} />
       </Dialog>
     </nav>
   );
