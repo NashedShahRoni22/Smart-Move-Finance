@@ -1,33 +1,45 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { GoSignOut } from "react-icons/go";
+import { Link } from "react-router-dom";
 
-export default function LeftBar({setShow}) {
+export default function LeftBar({ setShow }) {
   const menus = [
     {
-      name: 'Appointments',
-      link: '/admin',
+      name: "Appointments",
+      link: "/admin",
     },
     {
-      name: 'Add Service',
-      link: '/admin/add_service',
+      name: "Add Service",
+      link: "/admin/add_service",
     },
     {
-      name: 'Manage Service',
-      link: '/admin/manage_service',
+      name: "Manage Service",
+      link: "/admin/manage_service",
     },
-  ]
+  ];
   return (
-    <div className='flex flex-col p-5 shadow-xl min-h-screen bg-primary text-white sticky top-0'>
-      {menus.map((m,i) => (
+    <section className="shadow-xl min-h-screen bg-primary text-white sticky top-0">
+      <div className="p-5 flex flex-col">
+        {menus.map((m, i) => (
+          <Link
+            to={m.link}
+            key={i}
+            onClick={() => setShow(false)}
+            className="text-xl p-2.5 min-w-full text-center md:text-left"
+          >
+            {m.name}
+          </Link>
+        ))}
+      </div>
+      <div className="flex justify-center absolute bottom-4 min-w-full">
         <Link
-          to={m.link}
-          key={i}
-          onClick={()=> setShow(false)}
-          className='text-xl p-2.5 min-w-full text-center md:text-left'
+          className="px-4 py-2 text-sm bg-red-500 text-white w-fit rounded shadow flex gap-2 items-center"
+          to="/"
         >
-          {m.name}
+          {" "}
+          <GoSignOut className="text-xl" /> Log Out
         </Link>
-      ))}
-    </div>
-  )
+      </div>
+    </section>
+  );
 }

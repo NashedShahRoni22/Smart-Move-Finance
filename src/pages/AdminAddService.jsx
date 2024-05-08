@@ -1,5 +1,5 @@
 import { Button, Spinner } from "@material-tailwind/react";
-import  { useState } from "react";
+import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,36 @@ export default function AdminAddService() {
   const [value, setValue] = useState("");
   const [icon, setIcon] = useState("");
   const [thumbnail, setThumbnail] = useState("");
+
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, 3, 4, 5, 6] }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+      ],
+      ["link", "image", "video", "code-block"],
+      ["clean"],
+    ],
+  };
+
+  const formats = [
+    "header",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "list",
+    "bullet",
+    "indent",
+    "link",
+    "image",
+  ];
+
   // add a new service
   const addService = async (e) => {
     setLoader(true);
@@ -26,18 +56,21 @@ export default function AdminAddService() {
     formData.append("slogan", slogan);
     formData.append("content", value);
     try {
-      const response = await fetch("https://api.smartmovefinancial.com.au/api/service/store", {
-        method: "POST",
-        body: formData,
-        headers: {
-          // Add any necessary headers, such as authorization
-        },
-      });
+      const response = await fetch(
+        "https://api.smartmovefinancial.com.au/api/service/store",
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            // Add any necessary headers, such as authorization
+          },
+        }
+      );
       const data = await response.json();
-      if(data.status === true){
+      if (data.status === true) {
         window.alert(data.msg);
         setLoader(false);
-        navigate("/admin/manage_service")
+        navigate("/admin/manage_service");
       }
       // Handle response data as needed
     } catch (error) {
@@ -47,11 +80,17 @@ export default function AdminAddService() {
   };
   return (
     <form className="mt-5 md:mt-0 md:p-5 lg:p-10" onSubmit={addService}>
-      <h5 className="text-xl md:text-3xl text-primary font-semibold">
-        Add Service
-      </h5>
-      <div className='grid md:grid-cols-2 gap-2.5 md:gap-5 mt-5 md:mt-10'>
-        <div className='flex flex-col gap-2.5'>
+      <div className="flex justify-between">
+        <h5 className="text-xl md:text-3xl text-primary font-semibold">
+          Add Service
+        </h5>
+        <Button type="submit" className="bg-primary flex gap-2 items-center">
+          Submit
+          {loader && <Spinner className="h-4 w-4" />}
+        </Button>
+      </div>
+      <div className="grid md:grid-cols-2 gap-2.5 md:gap-5 mt-5 md:mt-10">
+        <div className="flex flex-col gap-2.5">
           <label>Select Icon</label>
           <input
             type="file"
@@ -59,7 +98,7 @@ export default function AdminAddService() {
             onChange={(e) => setIcon(e.target.files[0])}
           />
         </div>
-        <div className='flex flex-col gap-2.5'>
+        <div className="flex flex-col gap-2.5">
           <label>Select Thumbnail</label>
           <input
             type="file"
@@ -67,7 +106,7 @@ export default function AdminAddService() {
             onChange={(e) => setThumbnail(e.target.files[0])}
           />
         </div>
-        <div className='flex flex-col gap-2.5'>
+        <div className="flex flex-col gap-2.5">
           <label>Enter Title</label>
           <input
             type="text"
@@ -76,7 +115,7 @@ export default function AdminAddService() {
             placeholder="Enter Title"
           />
         </div>
-        <div className='flex flex-col gap-2.5'>
+        <div className="flex flex-col gap-2.5">
           <label>Enter Slogan</label>
           <input
             type="text"
@@ -88,14 +127,15 @@ export default function AdminAddService() {
       </div>
       <div className="mt-5 flex flex-col gap-2.5">
         <label className="">Enter Content</label>
-        <ReactQuill theme="snow" value={value} onChange={setValue} />
+        <ReactQuill
+          theme="snow"
+          value={value}
+          onChange={setValue}
+          modules={modules}
+          formats={formats}
+          className="py-2 w-full h-[300px]"
+        />
       </div>
-      <Button type="submit" className="bg-primary mt-2.5 flex gap-2 items-center">
-        Submit
-        {
-          loader && <Spinner className="h-4 w-4" />
-        }
-      </Button>
     </form>
   );
 }

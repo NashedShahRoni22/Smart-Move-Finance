@@ -135,7 +135,7 @@ const Appointment = () => {
                         color="blue-gray"
                         className="font-normal"
                       >
-                        {appointment?.service_id}
+                        {appointment?.service_title}
                       </Typography>
                     </td>
                     <td className="p-4">

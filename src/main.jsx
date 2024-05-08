@@ -14,6 +14,7 @@ import GetService from "./pages/GetService.jsx";
 import UpdateService from "./pages/UpdateService.jsx";
 import Appointment from "./pages/Appointment.jsx";
 import ServiceDetails from "./components/ServiceDetails.jsx";
+import Login from "./pages/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
         element: <ServiceDetails />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "/admin",
