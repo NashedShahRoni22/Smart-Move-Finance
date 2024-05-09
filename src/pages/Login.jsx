@@ -12,6 +12,7 @@ export default function Login() {
     const email = form.email.value;
     const password = form.password.value;
     if (email === loginEmail && password === loginPassword) {
+      localStorage.setItem("smfAccessToken", "@Smartmf2024")
       navigate("/admin");
     } else {
       window.alert("Enter valid email & password");

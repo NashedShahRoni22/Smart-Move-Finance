@@ -5,31 +5,8 @@ import yellowLine from "../assets/lines/yellow_line.png";
 export default function Contact() {
   return (
     <section className="mx-5 md:container md:mx-auto py-10 md:py-20 min-h-[80vh] flex justify-center items-center">
-      {/* <h1 className="text-primary  text-xl md:text-3xl font-semibold">
-        Contact us
-      </h1> */}
       <div className="lg:flex gap-16 flex-1">
         <div className="lg:w-1/2">
-          {/* <div className="flex justify-between">
-            <p>Address</p>
-            <p className="flex items-center">
-              {" "}
-              <MdLocationCity /> 178 West 27th Street, Australia.
-            </p>
-          </div>
-          <div className="mt-5 flex justify-between">
-            <p>Get in Touch</p>
-            <div>
-              <p className="flex items-center">
-                {" "}
-                <MdPhone /> +650012455
-              </p>
-              <p className="flex items-center">
-                {" "}
-                <MdEmail /> infohjb123@gmail.com
-              </p>
-            </div>
-          </div> */}
           <div className="">
             <p className="text-primary  text-xl md:text-3xl font-semibold">
               Leave a message

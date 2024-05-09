@@ -15,6 +15,7 @@ import UpdateService from "./pages/UpdateService.jsx";
 import Appointment from "./pages/Appointment.jsx";
 import ServiceDetails from "./components/ServiceDetails.jsx";
 import Login from "./pages/Login.jsx";
+import PrivateRoute from "./components/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -53,7 +54,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <Admin />,
+    element: (
+      <PrivateRoute>
+        <Admin />
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/admin",
