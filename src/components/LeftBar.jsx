@@ -9,6 +9,10 @@ export default function LeftBar({ setShow }) {
       link: "/admin",
     },
     {
+      name: "Contact Message",
+      link: "/admin/contact_message",
+    },
+    {
       name: "Add Service",
       link: "/admin/add_service",
     },
@@ -35,7 +39,7 @@ export default function LeftBar({ setShow }) {
         <Link
           className="px-4 py-2 text-sm bg-red-500 text-white w-fit rounded shadow flex gap-2 items-center"
           to="/"
-          onClick={()=> localStorage.removeItem("smfAccessToken")}
+          onClick={() => localStorage.removeItem("smfAccessToken")}
         >
           {" "}
           <GoSignOut className="text-xl" /> Log Out

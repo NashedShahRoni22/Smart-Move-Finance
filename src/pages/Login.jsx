@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const loginEmail = "admin@smartmovefinancial.com.au";
-  const loginPassword = "@Smartmf2024";
+  const loginPassword = "@smartmove2024";
   const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
@@ -12,7 +12,7 @@ export default function Login() {
     const email = form.email.value;
     const password = form.password.value;
     if (email === loginEmail && password === loginPassword) {
-      localStorage.setItem("smfAccessToken", "@Smartmf2024")
+      localStorage.setItem("smfAccessToken", "@smartmove2024")
       navigate("/admin");
     } else {
       window.alert("Enter valid email & password");

@@ -16,6 +16,7 @@ import Appointment from "./pages/Appointment.jsx";
 import ServiceDetails from "./components/ServiceDetails.jsx";
 import Login from "./pages/Login.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
+import ContactMessage from "./pages/ContactMessage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
       {
         path: "/admin/update_service/:slug/:id",
         element: <UpdateService />,
+      },
+      {
+        path: "/admin/contact_message",
+        element: <ContactMessage />,
       },
     ],
   },

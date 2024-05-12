@@ -3,6 +3,7 @@ import {
   Input,
   Option,
   Select,
+  Spinner,
   Textarea,
 } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
@@ -85,13 +86,8 @@ export default function BookingForm({ handleOpen }) {
         Book Appointment
       </h5>
       <div className="mt-5 md:mt-10">
-        {/* <Input
-          label="Loan Type"
-          required
-          onChange={(e) => setLoanType(e.target.value)}
-        /> */}
-        <Select onChange={value => setLoanType(value)} label="Select Service">
-          {services?.map((s,i) => (
+        <Select onChange={(value) => setLoanType(value)} label="Select Service">
+          {services?.map((s, i) => (
             <Option key={i} value={s?.id}>
               {s?.title}
             </Option>
@@ -102,42 +98,50 @@ export default function BookingForm({ handleOpen }) {
         <Input
           label="First Name"
           required
+          type="text"
           onChange={(e) => setFirstname(e.target.value)}
         />
         <Input
           label="Last Name"
           required
+          type="text"
           onChange={(e) => setLastname(e.target.value)}
         />
         <Input
           label="Phone Number"
-          type="number"
           required
+          type="number"
           onChange={(e) => setphoneNumber(e.target.value)}
         />
-        <Input label="Email" onChange={(e) => setEmail(e.target.value)} />
-        <Textarea
-          label="Enter Address"
+        <Input
+          label="Email"
           type="email"
           required
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Textarea
+          label="Enter Address"
+          required
+          type="text"
           onChange={(e) => setAddress(e.target.value)}
         />
         <Textarea
           label="Enter Message"
           required
+          type="text"
           onChange={(e) => setMessage(e.target.value)}
         />
       </div>
-      <div className="mt-5 md:mt-10">
+      <div className="mt-5 md:mt-10 flex gap-2">
         <button
           onClick={handleOpen}
-          className="px-4 py-1.5 bg-secondary text-white rounded-full shadow"
+          className="px-4 py-2 bg-secondary text-white rounded-full shadow"
         >
           <span>Cancel</span>
         </button>
         <button
           onClick={addAppointment}
-          className="ml-2.5 px-4 py-1.5 bg-primary text-white rounded-full shadow"
+          className="ml-2.5 px-4 py-2 bg-primary text-white rounded-full shadow flex gap-2 justify-center items-center"
           disabled={
             (firstName === "") |
             (lastName === "") |
@@ -147,7 +151,9 @@ export default function BookingForm({ handleOpen }) {
             (message === "")
           }
         >
-          {loader ? <span>Loading...</span> : <span>Book Now</span>}
+          Book Now {
+            loader && <Spinner className="h-4 w-4" />
+          }
         </button>
       </div>
     </form>
