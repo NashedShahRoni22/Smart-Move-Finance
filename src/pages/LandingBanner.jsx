@@ -9,13 +9,11 @@ export default function LandingBanner() {
       description:
         "Explore flexible loan options tailored to your needs, turning your dream of homeownership into reality.",
     },
-
     {
       title: "Maximize Your Business",
       description:
         "Discover competitive rates and refinancing solutions to optimize your finances and save big on your mortgage.",
     },
-
     {
       title: "Invest Wisely, Grow Securely",
       description:

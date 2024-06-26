@@ -24,7 +24,7 @@ export default function ServiceDetails() {
       {loader ? (
         <LoaderPage />
       ) : (
-        <section className="mx-5 md:container md:mx-auto py-5 md:py-10 flex flex-col gap-2.5 md:gap-5">
+        <section className="mx-5 md:container lg:w-[50%] md:mx-auto py-5 md:py-10 flex flex-col gap-2.5 md:gap-5">
           <div className="flex flex-col gap-2.5 md:gap-5">
             <div className="flex justify-center">
               <img src={service?.icon} alt="" className="" />
@@ -32,7 +32,7 @@ export default function ServiceDetails() {
             <h1 className="text-center text-xl md:text-3xl font-semibold text-primary">
               {service?.title}
             </h1>
-            <p className="text-center md:text-xl text-secondary">
+            <p className="text-center md:text-xl text-orange-800 font-semibold">
               {service?.slogan}
             </p>
             <div dangerouslySetInnerHTML={{ __html: service?.content }} />
