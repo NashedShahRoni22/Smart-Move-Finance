@@ -40,6 +40,7 @@ const Services = () => {
                       src={loan?.icon}
                       alt=""
                       className="size-12 md:size-18"
+                      loading="lazy"
                     />
                   </div>
                   <p className="text-xl md:text-2xl font-bold">{loan?.title}</p>

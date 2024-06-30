@@ -27,7 +27,7 @@ export default function ServiceDetails() {
         <section className="mx-5 md:container lg:w-[50%] md:mx-auto py-5 md:py-10 flex flex-col gap-2.5 md:gap-5">
           <div className="flex flex-col gap-2.5 md:gap-5">
             <div className="flex justify-center">
-              <img src={service?.icon} alt="" className="" />
+              <img src={service?.icon} alt="" className="" loading="lazy" />
             </div>
             <h1 className="text-center text-xl md:text-3xl font-semibold text-primary">
               {service?.title}
