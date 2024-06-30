@@ -4,7 +4,7 @@ import { MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { Dialog } from "@material-tailwind/react";
 import BookingForm from "./BookingForm";
-import logo from "../assets/smfp_logo.jpg";
+import logo from "../assets/smart-move-finance.jpg";
 import { CgChevronRight } from "react-icons/cg";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
