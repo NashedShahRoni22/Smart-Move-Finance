@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         element: <Services />,
       },
       {
-        path: "/service_details/:slug/:id",
+        path: "/services/:slug",
         element: <ServiceDetails />,
       },
     ],
@@ -74,7 +74,7 @@ const router = createBrowserRouter([
         element: <GetService />,
       },
       {
-        path: "/admin/update_service/:slug/:id",
+        path: "/admin/update_service/:slug",
         element: <UpdateService />,
       },
       {

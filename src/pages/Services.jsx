@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import yellowLine from "../assets/lines/yellow_line.png";
 import { Link } from "react-router-dom";
 import LoaderPage from "../components/LoaderPage";
+import { BsEyeFill } from "react-icons/bs";
 const Services = () => {
   const [loading, setLoading] = useState(false);
   const [showNum, setShowNum] = useState(8);
@@ -33,21 +34,26 @@ const Services = () => {
         <>
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
             {services.slice(0, showNum).map((loan, i) => (
-              <Link key={i} to={`/service_details/${loan?.slug}/${loan?.id}`}>
-                <div className="min-h-full text-primary shadow hover:shadow-primary  flex  flex-col gap-5  justify-between items-center p-10 rounded-3xl duration-300 ease-linear">
-                  <div>
-                    <img
-                      src={loan?.icon}
-                      alt=""
-                      className="size-12 md:size-18"
-                      loading="lazy"
-                    />
+              <Link
+                key={i}
+                to={`/services/${loan?.slug}`}
+                className="p-2 rounded shadow-xl group"
+              >
+                <div className="overflow-hidden relative">
+                  <img
+                    src={loan?.thumbnail}
+                    alt=""
+                    className="h-[200px] w-full group-hover:scale-110 group-hover:rotate-3 duration-300 ease-linear rounded"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-0 h-full w-full bg-black/60 hidden group-hover:flex justify-center items-center duration-300 ease-linear rounded">
+                    <BsEyeFill className="text-4xl text-white" />
                   </div>
-                  <p className="text-xl md:text-2xl font-bold">{loan?.title}</p>
-                  <p className="md:text-xl text-center">
-                    {loan?.slogan?.slice(0, 60)}...
-                  </p>
                 </div>
+                <p className="text-xl font-semibold text-primary mt-3">
+                  {loan?.title}
+                </p>
+                <p className="mt-1.5">{loan?.slogan?.slice(0, 60)}...</p>
               </Link>
             ))}
           </div>

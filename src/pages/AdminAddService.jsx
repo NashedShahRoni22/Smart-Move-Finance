@@ -8,7 +8,6 @@ export default function AdminAddService() {
   const navigate = useNavigate();
   const [loader, setLoader] = useState(false);
   const [value, setValue] = useState("");
-  const [icon, setIcon] = useState("");
   const [thumbnail, setThumbnail] = useState("");
 
   const modules = {
@@ -45,13 +44,14 @@ export default function AdminAddService() {
     setLoader(true);
     e.preventDefault();
     const title = e.target.title.value;
+    const meta_title = e.target.meta_title.value;
+    const meta_description = e.target.meta_description.value;
     const slogan = e.target.slogan.value;
-
-    console.log(icon, title, thumbnail, slogan, value);
-
     const formData = new FormData();
-    formData.append("icon", icon);
     formData.append("title", title);
+    formData.append("meta_title", meta_title);
+    formData.append("meta_description", meta_description);
+    formData.append("url", meta_description);
     formData.append("thumbnail", thumbnail);
     formData.append("slogan", slogan);
     formData.append("content", value);
@@ -79,7 +79,7 @@ export default function AdminAddService() {
     }
   };
   return (
-    <form className="mt-5 md:mt-0 md:p-5 lg:p-10" onSubmit={addService}>
+    <form className="mt-5 md:mt-0 md:p-5 lg:p-10 flex flex-col gap-5" onSubmit={addService}>
       <div className="flex justify-between">
         <h5 className="text-xl md:text-3xl text-primary font-semibold">
           Add Service
@@ -89,43 +89,61 @@ export default function AdminAddService() {
           {loader && <Spinner className="h-4 w-4" />}
         </Button>
       </div>
-      <div className="grid md:grid-cols-2 gap-2.5 md:gap-5 mt-5 md:mt-10">
-        <div className="flex flex-col gap-2.5">
-          <label>Select Icon</label>
-          <input
-            type="file"
-            className=""
-            onChange={(e) => setIcon(e.target.files[0])}
-          />
-        </div>
-        <div className="flex flex-col gap-2.5">
-          <label>Select Thumbnail</label>
-          <input
-            type="file"
-            className=""
-            onChange={(e) => setThumbnail(e.target.files[0])}
-          />
-        </div>
-        <div className="flex flex-col gap-2.5">
-          <label>Enter Title</label>
-          <input
-            type="text"
-            name="title"
-            className="px-4 py-2 outline-none border border-primary rounded"
-            placeholder="Enter Title"
-          />
-        </div>
-        <div className="flex flex-col gap-2.5">
-          <label>Enter Slogan</label>
-          <input
-            type="text"
-            name="slogan"
-            className="px-4 py-2 outline-none border border-primary rounded"
-            placeholder="Enter Slogan"
-          />
-        </div>
+
+      <div className="flex flex-col gap-2.5">
+        <label>Select Thumbnail</label>
+        <input
+          type="file"
+          className=""
+          onChange={(e) => setThumbnail(e.target.files[0])}
+        />
       </div>
-      <div className="mt-5 flex flex-col gap-2.5">
+      <div className="flex flex-col gap-2.5">
+        <label>Enter Title</label>
+        <input
+          type="text"
+          name="title"
+          className="px-4 py-2 outline-none border border-primary rounded"
+          placeholder="Enter Title"
+        />
+      </div>
+      <div className="flex flex-col gap-2.5">
+        <label>Enter Meta Title</label>
+        <input
+          type="text"
+          name="meta_title"
+          className="px-4 py-2 outline-none border border-primary rounded"
+          placeholder="Enter Meta Title"
+        />
+      </div>
+      <div className="flex flex-col gap-2.5">
+        <label>Enter Meta Description</label>
+        <textarea
+          type="text"
+          name="meta_description"
+          className="px-4 py-2 outline-none border border-primary rounded"
+          placeholder="Enter Meta Description"
+        />
+      </div>
+      <div className="flex flex-col gap-2.5">
+        <label>Enter URL</label>
+        <input
+          type="text"
+          name="url"
+          className="px-4 py-2 outline-none border border-primary rounded"
+          placeholder="Enter URL"
+        />
+      </div>
+      <div className="flex flex-col gap-2.5">
+        <label>Enter Slogan</label>
+        <input
+          type="text"
+          name="slogan"
+          className="px-4 py-2 outline-none border border-primary rounded"
+          placeholder="Enter Slogan"
+        />
+      </div>
+      <div className="flex flex-col gap-2.5">
         <label className="">Enter Content</label>
         <ReactQuill
           theme="snow"

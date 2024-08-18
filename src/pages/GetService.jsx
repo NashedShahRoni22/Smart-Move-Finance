@@ -5,7 +5,6 @@ import LoaderPage from "../components/LoaderPage";
 export default function GetService() {
   const [loading, setLoading] = useState(false);
   const [services, setServices] = useState([]);
-  //   console.log(services);
 
   //get services
   useEffect(() => {
@@ -61,7 +60,7 @@ export default function GetService() {
                 <p className="md:text-xl text-center">{s?.slogan}</p>
                 <div className="flex gap-2">
                   <Link
-                    to={`/admin/update_service/${s?.slug}/${s?.id}`}
+                    to={`/admin/update_service/${s?.slug}`}
                     className="bg-primary text-white px-2.5 py-1.5 shadow rounded"
                   >
                     Update

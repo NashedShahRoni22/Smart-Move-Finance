@@ -3,25 +3,80 @@ import yellowLine from "../assets/lines/yellow_line.png";
 
 export default function WeWorksWith() {
   const images = [
-    { img: "https://i.ibb.co/T4z534y/nab.png" },
-    { img: "https://i.ibb.co/jJhvcck/mebank.png" },
-    { img: "https://i.ibb.co/F6r8hBd/latrobe-Financial.png" },
-    { img: "https://i.ibb.co/7XHjJSd/anz.png" },
-    { img: "https://i.ibb.co/3c6jKNd/connective.png" },
-    { img: "https://i.ibb.co/Lvj3Ph3/citi-Bank-new.png" },
-    { img: "https://i.ibb.co/xLwCG9C/bankWest.png" },
-    { img: "https://i.ibb.co/MDbsm7R/redrock.png" },
-    { img: "https://i.ibb.co/SRsCwmt/mkmcapital.png" },
-    { img: "https://i.ibb.co/MSwrz1K/Bank-Australia-logo-e1609164649610.png" },
-    { img: "https://i.ibb.co/9N8Mzf3/592px-Allianz-svg.png" },
-    { img: "https://i.ibb.co/zrq55Hy/ABA.png" },
-    { img: "https://i.ibb.co/f8HXmJq/adelaide-bank.png" },
-    { img: "https://i.ibb.co/CBkmhPn/afm-e1609164715580.png" },
-    { img: "https://i.ibb.co/VYQcJHF/amp-bank-e1609164669294.jpg" },
-    { img: "https://i.ibb.co/Ln2qmCt/bank-of-syney.png" },
-    { img: "https://i.ibb.co/QdcY6ZN/westpac.png" },
-    { img: "https://i.ibb.co/W3Qt1Mj/sunCorp.png" },
+    {
+      src: "https://i.ibb.co/Wgb70tp/adelaide-bank-mortgage.png",
+      alt: "adelaide bank best home loan rates",
+    },
+    {
+      src: "https://i.ibb.co/tmXB59f/afm-services.png",
+      alt: "afm services in sydney Australia",
+    },
+    {
+      src: "https://i.ibb.co/fqvMSS7/allianz-home-insurance.png",
+      alt: "Allianz home insurace with smart move finance",
+    },
+    {
+      src: "https://i.ibb.co/Xpn6Ndg/amp-bank-home-loan.jpg",
+      alt: "Smart move finance works with amp bank",
+    },
+    {
+      src: "https://i.ibb.co/1qmTrNb/anz-personal-loan.png",
+      alt: "Mortgage home and personal loan with ANZ",
+    },
+    {
+      src: "https://i.ibb.co/0G244f8/auswide-bank.png",
+      alt: "Auswide bank home loan",
+    },
+    {
+      src: "https://i.ibb.co/tCctnjv/bank-australia-sydney.png",
+      alt: "Smart Move Finance Works with Bank Australia Sydney",
+    },
+    {
+      src: "https://i.ibb.co/9ZjYD3M/bank-of-syney.png",
+      alt: "Smart Move Finance Works with Bank of Sydney",
+    },
+    {
+      src: "https://i.ibb.co/MVvh7kc/bank-west-home-loan.png",
+      alt: "Affordable home loan rates with bank west",
+    },
+    {
+      src: "https://i.ibb.co/6y1s7d8/citi-bank-housing-loan.png",
+      alt: "Citi bank housing Loan",
+    },
+    {
+      src: "https://i.ibb.co/mRH2XhZ/connective-home-loan.png",
+      alt: "Connective home loan",
+    },
+    {
+      src: "https://i.ibb.co/D5PQKcS/la-trobe-financial.png",
+      alt: "la trobe financial interest rates",
+    },
+    {
+      src: "https://i.ibb.co/2W493my/me-bank-mortgage.png",
+      alt: "me bank mortgage rates",
+    },
+    {
+      src: "https://i.ibb.co/7nWJWhS/mkm-capital.png",
+      alt: "mkm capital financial services",
+    },
+    {
+      src: "https://i.ibb.co/3hGTg2T/nab-mortgage-loan.png",
+      alt: "nab home and business mortgage loan",
+    },
+    {
+      src: "https://i.ibb.co/g4k1ZzF/redrock.png",
+      alt: "Smart move finance works with redrock",
+    },
+    {
+      src: "https://i.ibb.co/ZLp7DZ0/suncorp-sydney.png",
+      alt: "Contact us for suncorp bank home loan",
+    },
+    {
+      src: "https://i.ibb.co/w0mkpN9/westpack-loan.png",
+      alt: "Westpac loan with smart move finance",
+    },
   ];
+
   return (
     <section className="mx-5 md:container md:mx-auto py-5 md:py-20">
       <div className="flex flex-col justify-center items-center">
@@ -32,7 +87,7 @@ export default function WeWorksWith() {
       </div>
       <div className="mt-5 md:mt-10 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-5 md:gap-10 place-items-center">
         {images.map((i) => (
-          <img key={i} src={i.img} alt="" />
+          <img key={i} src={i?.src} alt={i.alt} />
         ))}
       </div>
     </section>
