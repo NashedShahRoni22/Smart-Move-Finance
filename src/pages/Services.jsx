@@ -3,10 +3,13 @@ import yellowLine from "../assets/lines/yellow_line.png";
 import { Link } from "react-router-dom";
 import LoaderPage from "../components/LoaderPage";
 import { BsEyeFill } from "react-icons/bs";
+import { MdArrowOutward } from "react-icons/md";
 const Services = () => {
   const [loading, setLoading] = useState(false);
   const [showNum, setShowNum] = useState(8);
   const [services, setServices] = useState([]);
+  console.log(services);
+
   //get services
   useEffect(() => {
     setLoading(true);
@@ -36,8 +39,8 @@ const Services = () => {
             {services.slice(0, showNum).map((loan, i) => (
               <Link
                 key={i}
-                to={`/services/${loan?.slug}`}
-                className="p-2 rounded shadow-xl group"
+                to={`/service/${loan?.slug}`}
+                className="rounded shadow-xl group"
               >
                 <div className="overflow-hidden relative">
                   <img
@@ -47,13 +50,23 @@ const Services = () => {
                     loading="lazy"
                   />
                   <div className="absolute top-0 h-full w-full bg-black/60 hidden group-hover:flex justify-center items-center duration-300 ease-linear rounded">
-                    <BsEyeFill className="text-4xl text-white" />
+                    <BsEyeFill className="text-3xl text-white" />
                   </div>
                 </div>
-                <p className="text-xl font-semibold text-primary mt-3">
-                  {loan?.title}
-                </p>
-                <p className="mt-1.5">{loan?.slogan?.slice(0, 60)}...</p>
+                <div className="p-4">
+                  <p className="text-xl font-semibold text-primary mt-3">
+                    {loan?.title}
+                  </p>
+                  <div
+                    className="my-2.5 text-justify"
+                    dangerouslySetInnerHTML={{
+                      __html: loan?.content?.slice(0, 350),
+                    }}
+                  />
+                  <div className="p-2 border w-fit rounded-full bg-primary text-white group-hover:scale-110 duration-300 ease-linear">
+                    <MdArrowOutward className="text-xl group-hover:rotate-45 duration-300 ease-linear" />
+                  </div>
+                </div>
               </Link>
             ))}
           </div>

@@ -52,7 +52,7 @@ export default function LandingBanner() {
           }`}
         >
           <div className="mx-5 md:container md:mx-auto lg:flex lg:justify-center lg:items-center lg:gap-10 h-full">
-            <div className="flex flex-col justify-center items-center lg:items-start">
+            <div className="flex flex-col justify-center items-center lg:w-1/2 lg:items-start">
               <Typography
                 variant="h1"
                 color="white"
@@ -63,7 +63,7 @@ export default function LandingBanner() {
               <Typography
                 variant="lead"
                 color="white"
-                className="my-5 md:my-10 text-sm md:text-xl text-center lg:text-left"
+                className="my-5 md:my-10 text-sm md:text-xl text-center lg:text-justify"
               >
                 {s.description}
               </Typography>
@@ -78,7 +78,7 @@ export default function LandingBanner() {
                 Explore Our Services
               </Link>
             </div>
-            <div className="hidden lg:block">
+            <div className="hidden lg:block lg:w-1/2">
               <img src={s.image} alt={s.alt} className="rounded-xl shadow-xl" loading="lazy" />
             </div>
           </div>

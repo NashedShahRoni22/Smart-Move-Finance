@@ -62,7 +62,7 @@ export default function Navbar() {
                     <div key={mc?.id}>
                       <a
                         className="hover:translate-x-2.5 ease-linear duration-300 flex gap-2 items-center"
-                        href={`/service_details/${mc?.slug}/${mc?.id}`}
+                        href={`/service/${mc?.slug}`}
                       >
                         <CgChevronRight /> {mc?.title}
                       </a>

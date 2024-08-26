@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import LoaderPage from "./LoaderPage";
+import { Helmet } from "react-helmet";
 
 export default function ServiceDetails() {
   const { slug } = useParams();
@@ -27,6 +28,10 @@ export default function ServiceDetails() {
         <LoaderPage />
       ) : (
         <section className="mx-5 md:container lg:w-[50%] md:mx-auto py-5 md:py-10 flex flex-col gap-2.5 md:gap-5">
+          <Helmet>
+            <title>{service?.meta_title}</title>
+            <meta name="description" content={service?.meta_description} />
+          </Helmet>
           <div className="flex flex-col gap-2.5 md:gap-5">
             <div className="flex justify-center">
               <img
