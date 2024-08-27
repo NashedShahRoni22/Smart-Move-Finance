@@ -6,7 +6,6 @@ import { BsEyeFill } from "react-icons/bs";
 export default function GetService() {
   const [loading, setLoading] = useState(false);
   const [services, setServices] = useState([]);
-  console.log(services);
 
   //get services
   useEffect(() => {
@@ -78,7 +77,7 @@ export default function GetService() {
                   />
                   <div className="flex gap-2">
                     <Link
-                      to={`/admin/update_service/${s?.slug}`}
+                      to={`/admin/update_service/${s?.url}`}
                       className="bg-primary text-white px-2.5 py-1.5 shadow rounded"
                     >
                       Update

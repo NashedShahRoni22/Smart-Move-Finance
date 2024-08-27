@@ -62,7 +62,7 @@ export default function Navbar() {
                     <div key={mc?.id}>
                       <a
                         className="hover:translate-x-2.5 ease-linear duration-300 flex gap-2 items-center"
-                        href={`/service/${mc?.slug}`}
+                        href={`/service/${mc?.url}`}
                       >
                         <CgChevronRight /> {mc?.title}
                       </a>
@@ -102,7 +102,7 @@ export default function Navbar() {
                     <div className="flex flex-col gap-2.5 ml-2.5 mt-2.5">
                       {m?.child?.map((mc) => (
                         <a
-                          href={`/service_details/${mc?.slug}/${mc?.id}`}
+                          href={`/service/${mc?.url}`}
                           className="hover:translate-x-2.5 ease-linear duration-300 flex gap-2 items-center md:text-xl"
                         >
                           {mc?.title}

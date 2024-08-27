@@ -6,7 +6,6 @@ import { Helmet } from "react-helmet";
 export default function ServiceDetails() {
   const { slug } = useParams();
   const [service, setService] = useState({});
-  console.log(service);
 
   const [loader, setLoader] = useState(false);
 

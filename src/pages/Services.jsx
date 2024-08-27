@@ -8,7 +8,6 @@ const Services = () => {
   const [loading, setLoading] = useState(false);
   const [showNum, setShowNum] = useState(8);
   const [services, setServices] = useState([]);
-  console.log(services);
 
   //get services
   useEffect(() => {
@@ -39,7 +38,7 @@ const Services = () => {
             {services.slice(0, showNum).map((loan, i) => (
               <Link
                 key={i}
-                to={`/service/${loan?.slug}`}
+                to={`/service/${loan?.url}`}
                 className="rounded shadow-xl group"
               >
                 <div className="overflow-hidden relative">
